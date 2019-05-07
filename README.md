@@ -1,4 +1,3 @@
-/*
 GAME RULES:
 
 - The game has 2 players, playing in rounds
@@ -10,4 +9,3 @@ After that, it's the next player's turn
  score gets added to his GLBAL score. After that, it's the next player's turn
 - The first player to reach 100 points on GLOBAL score wins the game
 
-*/
