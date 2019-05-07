@@ -39,23 +39,23 @@ document.querySelector(".btn-roll").addEventListener("click", function() {
 });
 
 document.querySelector(".btn-hold").addEventListener("click", function() {
-  scores[activePlayer] += roundScore;
-  document.querySelector("#score-" + activePlayer).textContent =
-    scores[activePlayer];
-
-  if (scores[activePlayer] >= 100) {
-    document.querySelector("#name-" + activePlayer).textContent = "WINNER!!";
-    document.querySelector(".dice").style.display = "none";
-    document
-      .querySelector(".player-" + activePlayer + "-panel")
-      .classList.add("winner");
-    document
-      .querySelector(".player-" + activePlayer + "-panel")
-      .classList.remove("active");
-      gamePlaying = false;
-  } else {
-    nextPlayer();
-  }
+    if (gamePlaying){
+        scores[activePlayer] += roundScore;
+        document.querySelector("#score-" + activePlayer).textContent =
+          scores[activePlayer];
+      
+        if (scores[activePlayer] >= 100) {
+          document.querySelector("#name-" + activePlayer).textContent = "WINNER!!";
+          document.querySelector(".dice").style.display = "none";
+          document.querySelector(".player-" + activePlayer + "-panel").classList.add("winner");
+          document.querySelector(".player-" + activePlayer + "-panel")
+            .classList.remove("active");
+          gamePlaying = false;
+        } else {
+          nextPlayer();
+        }
+    }
+ 
 });
 
 function nextPlayer() {
